@@ -112,7 +112,7 @@ public class TCPSingleton extends Thread {
 				    	objeto= gson.fromJson(line, Jugador.class);
 				    	
 				    	if(line!= null) {
-					    	observer.onMessage(line);
+					    	observer.onMessage(objeto);
 					    }
 				    		
 				    	System.out.println(objeto.getX());

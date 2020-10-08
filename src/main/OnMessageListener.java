@@ -2,6 +2,6 @@ package main;
 
 public interface OnMessageListener {
 	
-	void onMessage (String mensaje);
+	void onMessage (Jugador jugador);
 
 }

@@ -7,6 +7,9 @@ public class Server extends PApplet implements OnMessageListener {
 	TCPSingleton tcp;
 	int pantalla;
 	
+	//Jugador
+	Jugador jugador;
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		PApplet.main("main.Server");
@@ -62,13 +65,13 @@ public class Server extends PApplet implements OnMessageListener {
 			if(tcp.objeto!=null) {
 				
 				//Pinto la bolita
-				fill(tcp.objeto.getR(),tcp.objeto.getG(),tcp.objeto.getB());
-				ellipse(tcp.objeto.getX(),tcp.objeto.getY(),60,60);
+				fill(jugador.getR(),jugador.getG(),jugador.getB());
+				ellipse(jugador.getX(),jugador.getY(),60,60);
 				
 				
 				//pinto el nombre
 				fill(255);
-				text(tcp.objeto.getNombre(),tcp.objeto.getX()-25,tcp.objeto.getY()-40);
+				text(jugador.getNombre(),jugador.getX()-25,jugador.getY()-40);
 				
 			}
 			
@@ -81,8 +84,9 @@ public class Server extends PApplet implements OnMessageListener {
 	
 	
 	//Metodo observer
-	public void onMessage(String mensaje) {
-		// TODO Auto-generated method stub
+	public void onMessage(Jugador jugador) {
+		
+		this.jugador=jugador;
 		
 	}
 
